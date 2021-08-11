@@ -11,7 +11,8 @@ class _GameScreenState extends State<GameScreen> {
   var _currentPlayerName = "";
   var _clickCount = 0;
   var _isCounting = false;
-  int _bestScore = null;
+  //int _bestScore = null;
+  int? _bestScore = null;
   var _bestPlayerName = "";
   var _currentNameFieldController = TextEditingController();
 
@@ -26,7 +27,8 @@ class _GameScreenState extends State<GameScreen> {
   _stopGame() {
     setState(() {
       _isCounting = false;
-      if (_bestScore == null || _clickCount > _bestScore) {
+      //if (_bestScore == null || _clickCount > _bestScore) {
+      if (_bestScore == null || _clickCount > _bestScore!) {  
         _bestScore = _clickCount;
         _bestPlayerName = _currentPlayerName;
       }
