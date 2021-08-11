@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Text(snapshot.data);
+            // error to vscode correction : => return Text(snapshot.data.toString());
           } else if (snapshot.hasError) {
             return Text("Erreur de chargement");
           } else {
